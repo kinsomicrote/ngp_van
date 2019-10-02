@@ -7,7 +7,7 @@ module NgpVan
     RSpec.describe Stories do
       let(:client) { NgpVan::Client.new }
 
-      describe '#create_stories' do
+      describe '#create_story' do
         let(:body) do
           JSON.parse(fixture('create_story.json').read)
         end
