@@ -17,6 +17,7 @@ require 'ngp_van/client/people'
 require 'ngp_van/client/printed_lists'
 require 'ngp_van/client/minivan_exports'
 require 'ngp_van/client/signups'
+require 'ngp_van/client/stories'
 require 'ngp_van/client/survey_questions'
 require 'ngp_van/client/supporter_groups'
 require 'ngp_van/client/users'
@@ -60,6 +61,7 @@ module NgpVan
     include NgpVan::Client::PrintedLists
     include NgpVan::Client::MinivanExports
     include NgpVan::Client::Signups
+    include NgpVan::Client::Stories
     include NgpVan::Client::SupporterGroups
     include NgpVan::Client::SurveyQuestions
     include NgpVan::Client::Users

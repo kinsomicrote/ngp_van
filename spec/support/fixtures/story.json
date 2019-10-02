@@ -1,0 +1,18 @@
+{
+  "storyId": 123,
+  "title": "A Tale of Two Cities",
+  "storyText": "It was the best of times, it was the worst of times ...",
+  "storyStatus": {
+    "storyStatusId": 1
+  },
+  "vanId": 1000000000,
+  "tags": [
+    {
+      "codeId": 123
+    },
+    {
+      "codeId": 456
+    }
+  ],
+  "campaignId": 123456
+}
