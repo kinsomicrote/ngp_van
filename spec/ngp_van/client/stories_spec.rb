@@ -28,7 +28,7 @@ module NgpVan
           expect(
             a_request(:post, url)
               .with(
-                  body: body
+                body: body
               )
           ).to have_been_made
         end
