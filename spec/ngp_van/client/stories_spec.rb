@@ -3,6 +3,7 @@
 require 'spec_helper'
 
 module NgpVan
+  # rubocop:disable Metrics/ClassLength
   class Client
     RSpec.describe Stories do
       let(:client) { NgpVan::Client.new }
@@ -18,8 +19,8 @@ module NgpVan
           stub_request(:post, url)
             .with(body: JSON.generate(body))
             .to_return(
-                body: '123',
-                status: 201
+              body: '123',
+              status: 201
             )
         end
 
