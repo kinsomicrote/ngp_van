@@ -8,7 +8,7 @@ module NgpVan
       let(:client) { NgpVan::Client.new }
 
       describe '#cell_statuses' do
-        let(:response) { fixture('phone_cell_statuses.json') }
+        let(:response) { fixture('phones.json') }
         let(:url) { build_url(client: client, path: 'phones/isCellStatuses') }
 
         before do
