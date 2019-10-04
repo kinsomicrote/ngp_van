@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = %w(lib)
   spec.required_ruby_version = '>= 2.1.0'
   if $PROGRAM_NAME.end_with?('gem')
-    spec.signing_key = File.expand_path('~/.ssh/gem-private_key.pem')
+    spec.signing_key = File.expand_path('~/.gem/gem-private_key.pem')
   end
   spec.summary = 'Ruby wrapper for the NGP VAN API'
   spec.version = NgpVan::VERSION.dup
