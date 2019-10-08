@@ -7,7 +7,7 @@ module NgpVan
     RSpec.describe Phones do
       let(:client) { NgpVan::Client.new }
 
-      describe '#cell_statuses' do
+      describe '#is_cell_statuses' do
         let(:response) { fixture('phones.json') }
         let(:url) { build_url(client: client, path: 'phones/isCellStatuses') }
 
@@ -19,7 +19,7 @@ module NgpVan
         end
 
         it 'requests the correct resource' do
-          client.cell_statuses
+          client.is_cell_statuses
           expect(a_request(:get, url)).to have_been_made
         end
       end

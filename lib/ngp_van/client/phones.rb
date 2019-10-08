@@ -3,7 +3,7 @@
 module NgpVan
   class Client
     module Phones
-      def cell_statuses
+      def is_cell_statuses
         get(path: 'phones/isCellStatuses')
       end
     end
