@@ -7,7 +7,7 @@ module NgpVan
     RSpec.describe SavedLists do
       let(:client) { NgpVan::Client.new }
 
-      describe "#saved_lists" do
+      describe '#saved_lists' do
         let(:params) do
           {
             folderId: '1234',
