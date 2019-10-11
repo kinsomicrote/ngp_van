@@ -14,6 +14,7 @@ require 'ngp_van/client/event_types'
 require 'ngp_van/client/locations'
 require 'ngp_van/client/notes'
 require 'ngp_van/client/people'
+require 'ngp_van/client/phones'
 require 'ngp_van/client/printed_lists'
 require 'ngp_van/client/minivan_exports'
 require 'ngp_van/client/saved_lists'
@@ -59,6 +60,7 @@ module NgpVan
     include NgpVan::Client::Locations
     include NgpVan::Client::Notes
     include NgpVan::Client::People
+    include NgpVan::Client::Phones
     include NgpVan::Client::PrintedLists
     include NgpVan::Client::MinivanExports
     include NgpVan::Client::SavedLists

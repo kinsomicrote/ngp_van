@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "statusId": 1,
+      "statusName": "Verified Cell"
+    },
+    {
+      "statusId": 2,
+      "statusName": "Likely Cell"
+    },
+    {
+      "statusId": 3,
+      "statusName": "Likely Not a Cell"
+    },
+    {
+      "statusId": 4,
+      "statusName": "Not a Cell"
+    }
+  ],
+  "nextPageLink": null,
+  "count": 4
+}
