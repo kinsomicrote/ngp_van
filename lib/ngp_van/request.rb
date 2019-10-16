@@ -30,7 +30,7 @@ module NgpVan
       response = connection.send(method) do |request|
         request.path = path
         request.params = params
-        request.body = ::JSON.generate(body) unless body.empty?
+        request.body = ::JSON.generate(body, { quirks_mode: true }) unless body.empty?
       end
 
       Response.create(response.body)
