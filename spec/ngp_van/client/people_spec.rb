@@ -271,6 +271,146 @@ module NgpVan
           ).to eq('')
         end
       end
+
+      describe '#update_person_by_van_id' do
+        let(:body) do
+          JSON.parse(fixture('match_candidate.json').read)
+        end
+        let(:response) { fixture('match_response.json') }
+        let(:url) { build_url(client: client, path: 'people/1234') }
+
+        before do
+          stub_request(:post, url)
+            .with(body: JSON.generate(body))
+            .to_return(
+              body: response
+            )
+        end
+
+        it 'requests the correct resource' do
+          client.update_person_by_van_id(id: 1234, body: body)
+          expect(
+            a_request(:post, url)
+              .with(
+                body: body
+              )
+          ).to have_been_made
+        end
+
+        it 'returns a person record when record is found' do
+          person = client.update_person_by_van_id(id: 1234, body: body)
+          expect(person).to be_a(Hash)
+        end
+
+        it 'returns the requested person when record is found' do
+          person = client.update_person_by_van_id(id: 1234, body: body)
+          expect(person['vanId']).to eq(1_264_324)
+        end
+      end
+
+      describe '#finds_person_by_van_id' do
+        let(:params) do
+          {
+            '$expand' => 'phones,emails,addresses'
+          }
+        end
+        let(:response) { fixture('person.json') }
+        let(:url) { build_url(client: client, path: 'people/215501') }
+
+        before do
+          stub_request(:get, url)
+            .with(query: params)
+            .to_return(
+              body: response
+            )
+        end
+
+        it 'requests the correct resource' do
+          client.get_person_by_van_id(id: 215501, params: params)
+          expect(
+            a_request(:get, url)
+              .with(
+                  query: params
+              )
+          ).to have_been_made
+        end
+
+        it 'returns a person record when record is found' do
+          person = client.get_person_by_van_id(id: 215501, params: params)
+          expect(person).to be_a(Hash)
+        end
+
+        it 'returns the requested person when record is found' do
+          person = client.get_person_by_van_id(id: 215501, params: params)
+          expect(person['vanId']).to eq(215501)
+        end
+      end
+
+      describe '#create_note_for_person' do
+        let(:body) do
+          JSON.parse(fixture('create_notes.json').read)
+        end
+
+        let(:url) { build_url(client: client, path: 'people/215501/notes') }
+
+        before do
+          stub_request(:post, url)
+            .with(body: JSON.generate(body))
+            .to_return(
+              body: '',
+              status: 204
+            )
+        end
+
+        it 'requests the correct resource' do
+          client.create_notes_for_person(id: 215_501, body: body)
+          expect(
+            a_request(:post, url)
+              .with(
+                body: body
+              )
+          ).to have_been_made
+        end
+
+        it 'returns an empty response' do
+          expect(
+            client.create_notes_for_person(id: 215_501, body: body)
+          ).to eq('')
+        end
+      end
+
+      describe '#create_note_for_person by type' do
+        let(:body) do
+          JSON.parse(fixture('create_notes.json').read)
+        end
+
+        let(:url) { build_url(client: client, path: 'people/dwid:215501/notes') }
+
+        before do
+          stub_request(:post, url)
+            .with(body: JSON.generate(body))
+            .to_return(
+              body: '',
+              status: 204
+            )
+        end
+
+        it 'requests the correct resource' do
+          client.create_notes_for_person_by_type(id: 215_501, type: 'dwid', body: body)
+          expect(
+            a_request(:post, url)
+              .with(
+                body: body
+              )
+          ).to have_been_made
+        end
+
+        it 'returns an empty response' do
+          expect(
+            client.create_notes_for_person_by_type(id: 215_501, type: 'dwid', body: body)
+          ).to eq('')
+        end
+      end
     end
   end
 end
