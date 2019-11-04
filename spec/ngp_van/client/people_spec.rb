@@ -330,7 +330,7 @@ module NgpVan
           expect(
             a_request(:get, url)
               .with(
-                  query: params
+                query: params
               )
           ).to have_been_made
         end
@@ -384,7 +384,9 @@ module NgpVan
           JSON.parse(fixture('create_notes.json').read)
         end
 
-        let(:url) { build_url(client: client, path: 'people/dwid:215501/notes') }
+        let(:url) do
+          build_url(client: client, path: 'people/dwid:215501/notes')
+        end
 
         before do
           stub_request(:post, url)
@@ -396,7 +398,9 @@ module NgpVan
         end
 
         it 'requests the correct resource' do
-          client.create_notes_for_person_by_type(id: 215_501, type: 'dwid', body: body)
+          client.create_notes_for_person_by_type(
+            id: 215_501, type: 'dwid', body: body
+          )
           expect(
             a_request(:post, url)
               .with(
@@ -407,7 +411,9 @@ module NgpVan
 
         it 'returns an empty response' do
           expect(
-            client.create_notes_for_person_by_type(id: 215_501, type: 'dwid', body: body)
+            client.create_notes_for_person_by_type(
+              id: 215_501, type: 'dwid', body: body
+            )
           ).to eq('')
         end
       end
