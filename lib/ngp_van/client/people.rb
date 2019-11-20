@@ -40,6 +40,26 @@ module NgpVan
         verify_ids(id, codeId)
         delete(path: "people/#{id}/codes/#{codeId}")
       end
+
+      def update_person_by_van_id(id:, body: {})
+        verify_id(id)
+        post(path: "people/#{id}", body: body)
+      end
+
+      def get_person_by_van_id(id:, params: {})
+        verify_id(id)
+        get(path: "people/#{id}", params: params)
+      end
+
+      def create_notes_for_person(id:, body: {})
+        verify_id(id)
+        post(path: "people/#{id}/notes", body: body)
+      end
+
+      def create_notes_for_person_by_type(id:, type:, body: {})
+        verify_ids(id, type)
+        post(path: "people/#{type}:#{id}/notes", body: body)
+      end
     end
   end
 end

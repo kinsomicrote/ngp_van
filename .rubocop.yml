@@ -18,3 +18,7 @@ Style/Documentation:
 
 Style/FileName:
   Enabled: false
+
+Style/NumericLiterals:
+  Exclude:
+    - 'spec/**/*'

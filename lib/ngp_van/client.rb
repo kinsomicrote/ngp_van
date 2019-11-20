@@ -11,12 +11,14 @@ require 'ngp_van/client/district_fields'
 require 'ngp_van/client/echoes'
 require 'ngp_van/client/events'
 require 'ngp_van/client/event_types'
+require 'ngp_van/client/export_jobs'
 require 'ngp_van/client/locations'
 require 'ngp_van/client/notes'
 require 'ngp_van/client/people'
 require 'ngp_van/client/phones'
 require 'ngp_van/client/printed_lists'
 require 'ngp_van/client/minivan_exports'
+require 'ngp_van/client/saved_lists'
 require 'ngp_van/client/signups'
 require 'ngp_van/client/stories'
 require 'ngp_van/client/survey_questions'
@@ -56,12 +58,14 @@ module NgpVan
     include NgpVan::Client::Echoes
     include NgpVan::Client::Events
     include NgpVan::Client::EventTypes
+    include NgpVan::Client::ExportJobs
     include NgpVan::Client::Locations
     include NgpVan::Client::Notes
     include NgpVan::Client::People
     include NgpVan::Client::Phones
     include NgpVan::Client::PrintedLists
     include NgpVan::Client::MinivanExports
+    include NgpVan::Client::SavedLists
     include NgpVan::Client::Signups
     include NgpVan::Client::Stories
     include NgpVan::Client::SupporterGroups

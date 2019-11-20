@@ -1,0 +1,15 @@
+{
+  "exportJobId": 999888,
+  "exportJobGuid": "7B623929-05DA-4356-BF30-EF7D1BB0248C",
+  "savedListId": 1234,
+  "webhookUrl": "https://webhook.example.org/completedExportJobs",
+  "downloadUrl": "https://ngpvan.blob.core.windows.net/completed-export-jobs/7B623929-05DA-4356-BF30-EF7D1BB0248C_2017-01-01T12:00:00.csv",
+  "status": "Completed",
+  "type": 777,
+  "dateExpired": "2017-01-04T12:00:00Z",
+  "errorCode": null,
+  "surveyQuestions": [ { "surveyQuestionId": 1234 } ],
+  "activistCodes": [ { "activistCodeId": 4567 } ],
+  "customFields": [ { "customFieldId": 5678 } ],
+  "districtFields": [ { "districtFieldId": 10 } ]
+}

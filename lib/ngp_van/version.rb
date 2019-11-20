@@ -7,7 +7,7 @@ module NgpVan
 
   # Current minor release.
   # @return [Integer]
-  MINOR = 9
+  MINOR = 10
 
   # Current patch level.
   # @return [Integer]

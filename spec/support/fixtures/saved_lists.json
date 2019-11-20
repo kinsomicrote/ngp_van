@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "savedListId": 999888777,
+      "name": "GOTV list",
+      "description": "People we want to talk to for GOTV",
+      "listCount": 2000,
+      "doorCount": 987
+    }
+  ]
+}

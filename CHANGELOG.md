@@ -1,6 +1,11 @@
 ## [Unreleased]
 
+# 0.10.0
+
 - [ADDED] Phones endpoint ([#33](https://github.com/christopherstyles/ngp_van/pull/33) by @kinsomicrote).
+- [ADDED] Saved Lists endpoint ([#34](https://github.com/christopherstyles/ngp_van/pull/34) by @kinsomicrote).
+- [ADDED] Additional people endpoints ([#37](https://github.com/christopherstyles/ngp_van/pull/37) by @kinsomicrote).
+- [ADDED] Export Jobs endpoints ([#38](https://github.com/christopherstyles/ngp_van/pull/38) by @kinsomicrote).
 
 # 0.9.0
 
